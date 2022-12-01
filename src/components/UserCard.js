@@ -1,15 +1,15 @@
 import React from "react";
 
-const UserCard = ({ imgUrl, username, activity }) => {
+function UserCard(props) {
   return (
     <>
       <div className="card-container">
         <div className="card">
           <div className="user-image-container">
-            <img src={imgUrl} alt="user" className="user-icon" />
+            <img src={props.imgUrl} alt="user" className="user-icon" />
           </div>
             <p className="user-activity">
-            {username} started {activity} session
+            {props.username} started {props.activity} session
             </p>
         </div>
       </div>

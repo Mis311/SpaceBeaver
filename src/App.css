@@ -18,7 +18,7 @@ body #root {
 
 body {
   background: #f0f0f0;
-  color:white;
+  color: white;
 }
 
 #canvas-container {
@@ -56,7 +56,7 @@ a:hover {
   background: #000;
 }
 
-.star-button{
+.star-button {
   position: absolute;
   top: 71%;
   left: 58%;
@@ -68,56 +68,67 @@ a:hover {
   font-size: 1.5rem;
 }
 
-.nav-container{
+.nav-container {
   display: flex;
   width: 20%;
   height: 100%;
+  overflow: hidden;
 }
-
 
 // ======= Card =======//
 
-.card-container{
+.card-container {
   display: flex;
   flex-direction: column;
   width: 80%;
   height: 100%;
 }
 
-.card{
+.card {
   display: flex;
   flex-direction: column;
   width: 10vw;
   height: 10vh;
   background: #fff;
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.2s;
   cursor: pointer;
-  margin:10px;
-  color:red;
+  margin: 10px;
+  color: red;
 }
-.card:hover{
+.card:hover {
   transform: scale(1.1);
 }
-.card{
+.card {
   display: flex;
   font-size: 0.3rem;
-  flex-direction:row;
+  flex-direction: row;
 }
 
-.user-icon{
-
+.user-icon {
   display: flex;
   flex-direction: row;
-    width: 30px;
-    height: 30px;
-    background: #4bc475;
-    border: 1px solid #000;
-    border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #4bc475;
+  border: 1px solid #000;
+  border-radius: 50%;
 }
 
-.user-activity{
-  display:flex;
+.user-activity {
+  display: flex;
   flex-direction: row;
+}
+
+.calendar-header {
+  overflow-y: scroll;
+}
+
+.calendar-box {
+  width: 200px;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  margin: 10px;
 }
