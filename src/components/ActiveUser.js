@@ -18,10 +18,10 @@ function ActiveUser(){
     <>
       <div className="nav-container">
         <h3>Logo</h3>
-        <nav>
-          <div>ActiveUser</div>
-          {users.map(createUsers)}
-        </nav>
+            <nav className="active-users-list">
+                <div>ActiveUser</div>
+                {users.map(createUsers)}
+            </nav>
       </div>
     </>
   );

@@ -68,13 +68,23 @@ a:hover {
   font-size: 1.5rem;
 }
 
+button{
+  border:none;
+  background:transparent;
+}  
+
 .nav-container {
   display: flex;
+  flex-direction: column;
   width: 20%;
   height: 100%;
   overflow: hidden;
 }
 
+.active-users-list {
+  display: flex;
+  flex-direction: column;
+}
 // ======= Card =======//
 
 .card-container {
@@ -82,6 +92,7 @@ a:hover {
   flex-direction: column;
   width: 80%;
   height: 100%;
+
 }
 
 .card {

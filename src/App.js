@@ -1,17 +1,17 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import Sphere from "./components/Sphere";
-import { useState } from "react";
+import React, { useState } from "react";
 import ActiveUser from "./components/ActiveUser";
 import Calendar from  "./components/Calendar";
 function App() {
-  const  [clicked, setClicked] = useState(false);
+  const  [show, setShow] = useState(false);
 
   return (
     <>
       
       <div id="canvas-container">
-        <ActiveUser />
+        {show? <ActiveUser /> :null}
         <Canvas>
           <Sphere />
           <ambientLight
@@ -22,8 +22,8 @@ function App() {
           />
           <pointLight position={[-10, -10, -10]} />
         </Canvas>
-        <p className="star-button">★</p>
-        <Calendar />
+        <button onClick={()=>setShow(!show) }  className="star-button">★</button>
+        {show?<Calendar/>:null}
       </div>
     </>
   );
