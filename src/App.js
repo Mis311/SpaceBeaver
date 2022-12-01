@@ -4,12 +4,19 @@ import Sphere from "./components/Sphere";
 import React, { useState } from "react";
 import ActiveUser from "./components/ActiveUser";
 import Calendar from  "./components/Calendar";
+import Session from "./pages/Session";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 function App() {
   const  [show, setShow] = useState(false);
 
   return (
     <>
-      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/session" element=<Session/>></Route>
+        </Routes>
+    
       <div id="canvas-container">
         {show? <ActiveUser /> :null}
         <Canvas>
@@ -24,7 +31,9 @@ function App() {
         </Canvas>
         <button onClick={()=>setShow(!show) }  className="star-button">★</button>
         {show?<Calendar/>:null}
+        <Link to="/session">Session</Link>
       </div>
+      </BrowserRouter>
     </>
   );
 }
