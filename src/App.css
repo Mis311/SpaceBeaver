@@ -18,9 +18,11 @@ body #root {
 
 body {
   background: #f0f0f0;
+  color:white;
 }
 
 #canvas-container {
+  display: flex;
   height: 100%;
   width: 100%;
 }
@@ -52,4 +54,70 @@ a {
 a:hover {
   color: #fff;
   background: #000;
+}
+
+.star-button{
+  position: absolute;
+  top: 71%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+}
+
+.nav-container{
+  display: flex;
+  width: 20%;
+  height: 100%;
+}
+
+
+// ======= Card =======//
+
+.card-container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 10vw;
+  height: 10vh;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: all 0.2s;
+  cursor: pointer;
+  margin:10px;
+  color:red;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+.card{
+  display: flex;
+  font-size: 0.3rem;
+  flex-direction:row;
+}
+
+.user-icon{
+
+  display: flex;
+  flex-direction: row;
+    width: 30px;
+    height: 30px;
+    background: #4bc475;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.user-activity{
+  display:flex;
+  flex-direction: row;
 }
