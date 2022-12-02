@@ -49,6 +49,10 @@ a {
   padding: 10px 20px;
 }
 
+.dashboard{
+  margin-left:100px;
+}
+
 a:hover {
   color: #fff;
   background: #000;
