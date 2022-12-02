@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import ActiveUser from "./components/ActiveUser";
 import Calendar from  "./components/Calendar";
 import Session from "./pages/Session";
+import Dashboard from "./pages/Dashboard";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/session" element=<Session/>></Route>
+          <Route path="/dashboard" element=<Dashboard/>></Route>
         </Routes>
     
       <div id="canvas-container">
@@ -31,7 +33,9 @@ function App() {
         </Canvas>
         <button onClick={()=>setShow(!show) }  className="star-button">★</button>
         {show?<Calendar/>:null}
-        <Link to="/session">Session</Link>
+        
+        <Link to="/session" className="session">Session</Link>
+        <Link to="/dashboard" className="dashboard">Dashboard</Link>
       </div>
       </BrowserRouter>
     </>
