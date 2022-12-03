@@ -34,10 +34,12 @@ function App() {
         <button onClick={()=>setShow(!show) }  className="star-button">★</button>
         {show?<Calendar/>:null}
         
-        <Link to="/session" className="session">Session</Link>
-        <Link to="/dashboard" className="dashboard">Dashboard</Link>
+        
       </div>
+      <Link to="/session" className="session">Session</Link>
+      <Link to="/dashboard" className="dashboard">Dashboard</Link>
       </BrowserRouter>
+      
     </>
   );
 }

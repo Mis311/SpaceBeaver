@@ -21,7 +21,7 @@ const style = {
 
 const Leftboard = () => {
   return (
-    <div>
+    <div className="leftboard-container">
       <Box sx={style} 
   >
         <button className="start-session">Start Session</button>
