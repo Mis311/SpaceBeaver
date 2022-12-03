@@ -1,8 +1,15 @@
 import React from "react";
 import "./dashboard.css";
-
-const Dashboard = () => {
-  return <div>Dashboard</div>;
-};
+import Leftboard from "../components/Leftboard";
+function Dashboard(){
+  return (
+    <div className="dashboard-container">
+      <div className="dashboard-header">
+        <div className="logo">Dashboard</div></div>
+      <Leftboard />
+      
+    </div>
+  )
+}
 
 export default Dashboard;
