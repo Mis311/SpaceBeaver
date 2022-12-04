@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -42,7 +40,11 @@ const logo = "Space Beaver",
     },
   }));
 
-function ResponsiveAppBar({ disconnectWallet, connectedAccount }) {
+function ResponsiveAppBar({
+  disconnectWallet,
+  connectedAccount,
+  connectWallet,
+}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -81,9 +83,7 @@ function ResponsiveAppBar({ disconnectWallet, connectedAccount }) {
           <Typography variant="h6" noWrap component="a" href="/" sx={style}>
             {logo}
           </Typography>
-
           {/* Mobile Menu */}
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -120,7 +120,6 @@ function ResponsiveAppBar({ disconnectWallet, connectedAccount }) {
               ))}
             </Menu>
           </Box>
-
           {/* Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -140,63 +139,71 @@ function ResponsiveAppBar({ disconnectWallet, connectedAccount }) {
               </Button>
             ))}
           </Box>
-
           {/* Profile */}
-          <Box sx={{ flexGrow: 0, marginRight: "1rem" }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <StyledBadge
-                  overlap="circular"
-                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                  variant="dot"
-                >
-                  <Avatar src={profile} />
-                </StyledBadge>
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem
-                  key={setting}
-                  onClick={() => {
-                    handleCloseUserMenu();
-                    if (setting === "Logout") {
-                      console.log("Logout");
-                      disconnectWallet();
-                      // window.location.href = "/";
-                    } else window.location.href = `/${setting.toLowerCase()}`;
+          {connectedAccount ? (
+            <>
+              <Box sx={{ flexGrow: 0, marginRight: "1rem" }}>
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <StyledBadge
+                      overlap="circular"
+                      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                      variant="dot"
+                    >
+                      <Avatar src={profile} />
+                    </StyledBadge>
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
                   }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
                 >
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Button
-            color="inherit"
-            onClick={() => {
-              navigator.clipboard.writeText(connectedAccount);
-            }}
-          >
-            {connectedAccount.slice(0, 6) +
-              "..." +
-              connectedAccount.slice(38, 42)}
-          </Button>
+                  {settings.map((setting) => (
+                    <MenuItem
+                      key={setting}
+                      onClick={() => {
+                        handleCloseUserMenu();
+                        if (setting === "Logout") {
+                          console.log("Logout");
+                          disconnectWallet();
+                          // window.location.href = "/";
+                        } else
+                          window.location.href = `/${setting.toLowerCase()}`;
+                      }}
+                    >
+                      <Typography textAlign="center">{setting}</Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+              <Button
+                color="inherit"
+                onClick={() => {
+                  navigator.clipboard.writeText(connectedAccount);
+                }}
+              >
+                {connectedAccount.slice(0, 6) +
+                  "..." +
+                  connectedAccount.slice(38, 42)}
+              </Button>
+            </>
+          ) : (
+            <Button color="inherit" onClick={connectWallet}>
+              Connect Wallet
+            </Button>
+          )}
         </Toolbar>
       </Container>
     </AppBar>

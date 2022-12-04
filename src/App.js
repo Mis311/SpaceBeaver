@@ -16,9 +16,9 @@ import "./Editor.css";
 import {
   isWallectConnected,
   // checkIfTransactionExist,
-  // connectWallet,
   // getAllTransactions,
   // signMessage,
+  connectWallet,
   disconnectWallet,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
@@ -38,6 +38,7 @@ function App() {
         <Header
           disconnectWallet={disconnectWallet}
           connectedAccount={connectedAccount}
+          connectWallet={connectWallet}
         />
 
         <Routes>
