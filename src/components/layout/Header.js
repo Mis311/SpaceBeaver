@@ -42,7 +42,7 @@ const logo = "Space Beaver",
     },
   }));
 
-function ResponsiveAppBar({ disconnectWallet }) {
+function ResponsiveAppBar({ disconnectWallet, connectedAccount }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -142,7 +142,7 @@ function ResponsiveAppBar({ disconnectWallet }) {
           </Box>
 
           {/* Profile */}
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, marginRight: "1rem" }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <StyledBadge
@@ -187,6 +187,16 @@ function ResponsiveAppBar({ disconnectWallet }) {
               ))}
             </Menu>
           </Box>
+          <Button
+            color="inherit"
+            onClick={() => {
+              navigator.clipboard.writeText(connectedAccount);
+            }}
+          >
+            {connectedAccount.slice(0, 6) +
+              "..." +
+              connectedAccount.slice(38, 42)}
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

@@ -25,8 +25,7 @@ import { useGlobalState } from "./store";
 
 function App() {
   // States
-  const [connectedAccount, transactions] = useGlobalState("connectedAccount"),
-    [show, setShow] = useState(false);
+  const [connectedAccount, transactions] = useGlobalState("connectedAccount");
 
   // Readers
   useEffect(() => {
@@ -36,7 +35,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header disconnectWallet={disconnectWallet} />
+        <Header
+          disconnectWallet={disconnectWallet}
+          connectedAccount={connectedAccount}
+        />
 
         <Routes>
           <Route path="/session" element={<Session />}></Route>
