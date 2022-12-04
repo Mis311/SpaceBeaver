@@ -1,0 +1,26 @@
+.chat-count {
+  /* Font + BG */
+  background: rgb(130 0 134);
+  font-family: system-ui;
+  font-weight: 700;
+  color: #fff;
+
+  /* Position */
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+
+  /* Sizing */
+  min-width: 15rem;
+  min-height: 6rem;
+
+  /* Box Shape */
+  padding-left: 1rem;
+  border-radius: 5px;
+}
+
+.chat-count > div {
+  color: #e3e3e3;
+  font-weight: 600;
+}

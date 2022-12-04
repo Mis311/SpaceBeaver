@@ -1,20 +1,23 @@
-import "./App.css";
-import { Canvas } from "@react-three/fiber";
-import Sphere from "./components/Sphere";
+// Components
 import React, { useState, useEffect } from "react";
-import ActiveUser from "./components/ActiveUser";
-import Calendar from "./components/Calendar";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+// Custom Components
 import Session from "./pages/Session";
 import Dashboard from "./pages/Dashboard";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Header from "./components/layout/Header";
+
+// CSS
+import "./App.css";
+import "./Editor.css";
 
 // Wallet
 import {
   isWallectConnected,
-  checkIfTransactionExist,
-  connectWallet,
-  getAllTransactions,
-  signMessage,
+  // checkIfTransactionExist,
+  // connectWallet,
+  // getAllTransactions,
+  // signMessage,
   disconnectWallet,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
@@ -28,37 +31,16 @@ function App() {
   useEffect(() => {
     isWallectConnected();
   }, []);
+
   return (
     <>
       <BrowserRouter>
+        <Header disconnectWallet={disconnectWallet} />
+
         <Routes>
           <Route path="/session" element={<Session />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
         </Routes>
-
-        <div id="canvas-container">
-          {show ? <ActiveUser /> : null}
-          <Canvas>
-            <Sphere />
-            <ambientLight
-              intensity={1}
-              position={[10, 10, 10]}
-              angle={0.15}
-              penumbra={1}
-            />
-            <pointLight position={[-10, -10, -10]} />
-          </Canvas>
-          <button onClick={() => setShow(!show)} className="star-button">
-            ★
-          </button>
-          {show ? <Calendar /> : null}
-        </div>
-        <Link to="/session" className="session">
-          Session
-        </Link>
-        <Link to="/dashboard" className="dashboard">
-          Dashboard
-        </Link>
       </BrowserRouter>
     </>
   );

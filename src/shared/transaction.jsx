@@ -84,6 +84,8 @@ const signMessage = async (message) => {
     message = transactionCount;
     let messageBytes = ethers.utils.arrayify(message),
       signature = await transactionContract.signer.signMessage(messageBytes);
+
+    console.log(signature);
   } catch (e) {
     console.log(e);
   }
@@ -122,4 +124,5 @@ export {
   getAllTransactions,
   signMessage,
   disconnectWallet,
+  getTransactionCount,
 };

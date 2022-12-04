@@ -1,5 +1,12 @@
 /* Editor Settings */
+.ce-chat-engine {
+  height: 80vh;
+}
+.ce-wrapper {
+  height: 100%;
+}
 
+/* Font Color System */
 .ql-editor,
 .ce-settings-container,
 .ce-chat-card,
@@ -12,4 +19,15 @@
 .ce-chat-subtitle-text.ce-chat-subtitle-message,
 .ce-chat-subtitle-text.ce-chat-subtitle-date {
   color: #060606 !important;
+}
+
+/* Chat Area */
+.ce-chat-title-text {
+  font-family: system-ui;
+}
+
+/* Chat Area -- People */
+.ce-person-text {
+  text-transform: capitalize;
+  font-weight: 600;
 }

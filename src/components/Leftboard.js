@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, typography } from "@mui/material";
-import { AmbientLight } from "three";
+import { Box } from "@mui/material";
+// import { Box, typography } from "@mui/material";
+// import { AmbientLight } from "three";
 
 const style = {
   color: "primary.main",
@@ -14,28 +15,21 @@ const style = {
   margin: "1.2rem",
   width: "12rem",
   height: "3rem",
-  border :"1px solid black",
-  borderRadius:"4px",
-  alighnItems:"center"
+  border: "1px solid black",
+  borderRadius: "4px",
+  alighnItems: "center",
 };
 
 const Leftboard = () => {
   return (
     <div className="leftboard-container">
-      <Box sx={style} 
-  >
+      <Box sx={style}>
         <button className="start-session">Start Session</button>
       </Box>
-      <Box 
-      sx={style}
-      style={{ height:"7rem" }}>
-    
-      <div className="conference">Conference Room</div>
+      <Box sx={style} style={{ height: "7rem" }}>
+        <div className="conference">Conference Room</div>
       </Box>
-      <Box sx={style}
-        color="primary.contrastText"
-        style={{ height: "17rem" }}
-      >
+      <Box sx={style} color="primary.contrastText" style={{ height: "17rem" }}>
         <div className="messages">Messages</div>
         <div className="">Session request</div>
         <div className="">Help request</div>

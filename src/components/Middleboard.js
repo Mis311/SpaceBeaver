@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, typography } from "@mui/material";
-import { AmbientLight } from "three";
+import { Box } from "@mui/material";
+// import { Box, typography } from "@mui/material";
+// import { AmbientLight } from "three";
 
 const style = {
   color: "primary.main",
