@@ -145,7 +145,7 @@ button {
 }
 
 .session-page > div:nth-child(4) > div {
-  height: 12vh !important;
+  height: 12vh;
 }
 
 /* Footer */

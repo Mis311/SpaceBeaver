@@ -6,8 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Session from "./pages/Session";
 import Dashboard from "./pages/Dashboard";
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+// import Footer from "./components/layout/Footer";
 
+import { Canvas } from "@react-three/fiber";
+import Sphere from "./components/Sphere";
+import ActiveUser from "./components/ActiveUser";
+import Calendar from  "./components/Calendar";
 // CSS
 import "./App.css";
 import "./Editor.css";
@@ -26,7 +30,7 @@ import { useGlobalState } from "./store";
 function App() {
   // States
   const [connectedAccount, transactions] = useGlobalState("connectedAccount");
-
+  const  [show, setShow] = useState(false);
   // Readers
   useEffect(() => {
     isWallectConnected();
@@ -34,6 +38,12 @@ function App() {
 
   return (
     <>
+    <div id="canvas-container">
+        {show? <ActiveUser /> :null}
+        
+        <button onClick={()=>setShow(!show) }  className="star-button">★</button>
+        {show?<Calendar/>:null}
+      </div>
       <BrowserRouter>
         <Header
           disconnectWallet={disconnectWallet}
@@ -44,8 +54,17 @@ function App() {
           <Route path="/session" element={<Session />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
         </Routes>
-
-        <Footer />
+        <Canvas>
+          <Sphere/>
+          <ambientLight
+            intensity={1}
+            position={[10, 10, 10]}
+            angle={0.15}
+            penumbra={1}
+          />
+          <pointLight position={[-10, -10, -10]} />
+        </Canvas>
+        {/* <Footer /> */}
       </BrowserRouter>
     </>
   );
