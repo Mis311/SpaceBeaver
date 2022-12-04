@@ -2,7 +2,7 @@ import React from "react";
 import { Box, typography } from "@mui/material";
 import { AmbientLight } from "three";
 
-const style = {
+var style = {
   color: "primary.main",
   display: "flex",
   flexDirection: "column",
