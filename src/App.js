@@ -23,6 +23,7 @@ import {
 import { useGlobalState } from "./store";
 
 function App() {
+
   // States
   const [connectedAccount, transactions] = useGlobalState("connectedAccount"),
     [show, setShow] = useState(false);

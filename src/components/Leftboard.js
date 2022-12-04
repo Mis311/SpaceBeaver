@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 // import { Box, typography } from "@mui/material";
 // import { AmbientLight } from "three";
 
-const style = {
+var style = {
   color: "primary.main",
   display: "flex",
   flexDirection: "column",
@@ -18,6 +18,7 @@ const style = {
   border: "1px solid black",
   borderRadius: "4px",
   alighnItems: "center",
+  cursor: "pointer",
 };
 
 const Leftboard = () => {
