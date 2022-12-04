@@ -55,8 +55,8 @@ function App() {
           <Route path="/session" element={<Session />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
         </Routes>
-        <Canvas>
-          <Sphere/>
+        <Canvas style={{height:"100vh"}}>
+          <Sphere />
           <ambientLight
             intensity={1}
             position={[10, 10, 10]}

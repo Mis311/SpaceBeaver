@@ -4,6 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { useSpring, animated, config } from "@react-spring/three";
 
 function Sphere(props) {
+  
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -28,7 +29,7 @@ function Sphere(props) {
         onPointerOut={() => setHovered(false)}
         scale={scale}
       >
-        <sphereGeometry args={[1, 32, 32]} />
+        <sphereGeometry args={[3, 32, 32]} />
         <meshStandardMaterial color={clicked ? "blue" : "purple"} />
       </animated.mesh>
     </>
