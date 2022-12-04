@@ -1,7 +1,7 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import Sphere from "./components/Sphere";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ActiveUser from "./components/ActiveUser";
 import Calendar from "./components/Calendar";
 import Session from "./pages/Session";
@@ -24,6 +24,10 @@ function App() {
   const [connectedAccount, transactions] = useGlobalState("connectedAccount"),
     [show, setShow] = useState(false);
 
+  // Readers
+  useEffect(() => {
+    isWallectConnected();
+  }, []);
   return (
     <>
       <BrowserRouter>
