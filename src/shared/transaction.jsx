@@ -3,7 +3,7 @@ import { setGlobalState } from "../store";
 
 import { contractAbi, contractAddress } from "../utils/constants";
 
-// const { ethereum } = window;
+const { ethereum } = window;
 
 const getEtheriumContract = () => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -82,8 +82,8 @@ const signMessage = async (message) => {
       message
     );
     message = transactionCount;
-    messageBytes = ethers.utils.arrayify(message);
-    signature = await transactionContract.signer.signMessage(messageBytes);
+    let messageBytes = ethers.utils.arrayify(message),
+      signature = await transactionContract.signer.signMessage(messageBytes);
   } catch (e) {
     console.log(e);
   }
