@@ -2,14 +2,14 @@ import React from "react";
 import CalendarBox from "./CalendarBox";
 import calendarUsers from "../utils/calendarUsers";
 
-function createUser(calendarUser){
-    return (
-        <CalendarBox 
-            key={calendarUser.id}
-            imgUrl={calendarUser.imgUrl}
-            username={calendarUser.username}
-        />
-    )
+function createUser(calendarUser) {
+  return (
+    <CalendarBox
+      key={calendarUser.id}
+      imgUrl={calendarUser.imgUrl}
+      username={calendarUser.username}
+    />
+  );
 }
 
 const Calendar = () => {

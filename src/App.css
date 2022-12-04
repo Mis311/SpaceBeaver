@@ -147,3 +147,10 @@ button {
 .session-page > div:nth-child(4) > div {
   height: 12vh !important;
 }
+
+/* Footer */
+.footer__paragraph {
+  color: #000;
+  margin: 0;
+  font-family: system-ui;
+}

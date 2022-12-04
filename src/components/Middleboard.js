@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 // import { AmbientLight } from "three";
 
 const style = {
-  color: "primary.main",
+  // color: "primary.main",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -43,13 +43,41 @@ const Middleboard = () => {
             className="planet-a"
           ></img>
         </div>
-        <Box style={style} className="meetpoint">Meetpoint</Box>
-        <Box style={style} className="live">Live</Box>
+        <Box style={style} className="meetpoint">
+          Meetpoint
+        </Box>
+        <Box style={style} className="live">
+          Live
+        </Box>
         <div className="data-box-container">
-          <Box sx={style} style={ {width:"15vw", height:"30vh"}} className="box1" >box</Box>
-          <Box sx={style} className="box2" style={ {width:"20vw", height:"30vh", }}>box</Box>
-          <Box sx={style} className="box3" style={ {width:"15vw", height:"15vh", }}>box</Box>
-          <Box sx={style} className="box4" style={ {width:"15vw", height:"15vh", }}>box</Box>
+          <Box
+            sx={style}
+            style={{ width: "15vw", height: "30vh" }}
+            className="box1"
+          >
+            box
+          </Box>
+          <Box
+            sx={style}
+            className="box2"
+            style={{ width: "20vw", height: "30vh" }}
+          >
+            box
+          </Box>
+          <Box
+            sx={style}
+            className="box3"
+            style={{ width: "15vw", height: "15vh" }}
+          >
+            box
+          </Box>
+          <Box
+            sx={style}
+            className="box4"
+            style={{ width: "15vw", height: "15vh" }}
+          >
+            box
+          </Box>
         </div>
       </div>
     </>

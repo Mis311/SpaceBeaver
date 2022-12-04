@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 // import { AmbientLight } from "three";
 
 var style = {
-  color: "primary.main",
+  // color: "primary.main",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
