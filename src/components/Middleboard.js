@@ -17,6 +17,7 @@ const style = {
   border: "1px solid black",
   borderRadius: "4px",
   alighnItems: "center",
+  cursor: "pointer",
 };
 
 const Middleboard = () => {

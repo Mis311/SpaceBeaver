@@ -16,7 +16,8 @@ var style = {
   height: "3rem",
   border :"1px solid black",
   borderRadius:"4px",
-  alighnItems:"center"
+  alighnItems:"center",
+  cursor:"pointer",
 };
 
 const Leftboard = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import "./dashboard.css";
 import Leftboard from "../components/Leftboard";
 import Middleboard from "../components/Middleboard";
