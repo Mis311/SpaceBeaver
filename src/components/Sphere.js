@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useSpring, animated, config } from "@react-spring/three";
 
-function Sphere({ handleSphereClick }) {
+function Sphere(props) {
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -22,7 +22,7 @@ function Sphere({ handleSphereClick }) {
         ref={ref}
         onClick={() => {
           setClicked(!clicked);
-          handleSphereClick();
+          props.handleSphereClick && props.handleSphereClick();
         }}
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}

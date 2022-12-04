@@ -19,7 +19,7 @@ import Badge from "@mui/material/Badge";
 const logo = "Space Beaver",
   pages = ["Session", "Dashboard"],
   settings = ["Profile", "Dashboard", "Logout"],
-  profile = "/rabbit.png",
+  profilePic = "/rabbit.png",
   //
   // Designing Badge
   StyledBadge = styled(Badge)(({ theme }) => ({
@@ -120,6 +120,7 @@ function ResponsiveAppBar({
               ))}
             </Menu>
           </Box>
+
           {/* Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -139,10 +140,24 @@ function ResponsiveAppBar({
               </Button>
             ))}
           </Box>
+
           {/* Profile */}
           {connectedAccount ? (
             <>
-              <Box sx={{ flexGrow: 0, marginRight: "1rem" }}>
+              <Tooltip title="Click To Copy" placement="bottom-start">
+                <Button
+                  color="inherit"
+                  onClick={() => {
+                    navigator.clipboard.writeText(connectedAccount);
+                  }}
+                  sx={{ marginRight: "1rem" }}
+                >
+                  {connectedAccount.slice(0, 6) +
+                    "..." +
+                    connectedAccount.slice(38, 42)}
+                </Button>
+              </Tooltip>
+              <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <StyledBadge
@@ -150,7 +165,7 @@ function ResponsiveAppBar({
                       anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                       variant="dot"
                     >
-                      <Avatar src={profile} />
+                      <Avatar src={profilePic} />
                     </StyledBadge>
                   </IconButton>
                 </Tooltip>
@@ -178,7 +193,8 @@ function ResponsiveAppBar({
                         if (setting === "Logout") {
                           console.log("Logout");
                           disconnectWallet();
-                          // window.location.href = "/";
+                          if (window.location.pathname == "/dashboard")
+                            window.location.href = "/";
                         } else
                           window.location.href = `/${setting.toLowerCase()}`;
                       }}
@@ -188,16 +204,6 @@ function ResponsiveAppBar({
                   ))}
                 </Menu>
               </Box>
-              <Button
-                color="inherit"
-                onClick={() => {
-                  navigator.clipboard.writeText(connectedAccount);
-                }}
-              >
-                {connectedAccount.slice(0, 6) +
-                  "..." +
-                  connectedAccount.slice(38, 42)}
-              </Button>
             </>
           ) : (
             <Button color="inherit" onClick={connectWallet}>
