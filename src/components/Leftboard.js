@@ -2,7 +2,7 @@ import React from "react";
 import { Box, typography } from "@mui/material";
 import { AmbientLight } from "three";
 
-const style = {
+var style = {
   color: "primary.main",
   display: "flex",
   flexDirection: "column",
@@ -16,7 +16,8 @@ const style = {
   height: "3rem",
   border :"1px solid black",
   borderRadius:"4px",
-  alighnItems:"center"
+  alighnItems:"center",
+  cursor:"pointer",
 };
 
 const Leftboard = () => {
