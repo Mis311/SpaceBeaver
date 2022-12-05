@@ -29,7 +29,7 @@ function Sphere(props) {
         onPointerOut={() => setHovered(false)}
         scale={scale}
       >
-        <sphereGeometry args={[2, 30, 30]} />
+        <sphereGeometry args={[1, 30, 30]} />
         <meshStandardMaterial color={clicked ? "blue" : "purple"} />
       </animated.mesh>
     </>

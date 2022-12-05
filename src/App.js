@@ -72,17 +72,8 @@ function App() {
             element={<Profile userState={userState} />}
           ></Route>
         </Routes>
-        <Canvas style={{ height: "80vh" }}>
-          <Sphere />
-          <ambientLight
-            intensity={1}
-            position={[10, 10, 10]}
-            angle={0.15}
-            penumbra={1}
-          />
-          <pointLight position={[-10, -10, -10]} />
-        </Canvas>
-          <div className="spinning-wheel"><SpinWheel /></div>
+       
+          <button className="spinning-wheel"><SpinWheel /></button>
         
         {/* <Footer /> */}
       </BrowserRouter>
