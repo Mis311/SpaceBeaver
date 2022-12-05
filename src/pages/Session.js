@@ -86,7 +86,11 @@ const Session = () => {
         </button>
         {show ? <Calendar /> : null}
       </div>
-      <Canvas>
+      <Canvas
+        style={{
+          height: "100vh",
+        }}
+      >
         <Sphere handleSphereClick={handleSphereClick} />
         <ambientLight
           intensity={1}

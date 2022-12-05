@@ -1,5 +1,5 @@
 // Components
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Custom Components
@@ -22,15 +22,22 @@ import {
   disconnectWallet,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
+import Profile from "./pages/Profile";
 
 function App() {
   // States
-  const [connectedAccount, transactions] = useGlobalState("connectedAccount");
+  const [connectedAccount] = useGlobalState("connectedAccount"),
+    [userState, setUserState] = useState(true);
 
   // Readers
   useEffect(() => {
     isWallectConnected();
   }, []);
+
+  // Functions
+  function UserState(bool) {
+    setUserState(bool);
+  }
 
   return (
     <>
@@ -39,11 +46,17 @@ function App() {
           disconnectWallet={disconnectWallet}
           connectedAccount={connectedAccount}
           connectWallet={connectWallet}
+          userState={userState}
+          setUserState={UserState}
         />
 
         <Routes>
           <Route path="/session" element={<Session />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route
+            path="/profile"
+            element={<Profile userState={userState} />}
+          ></Route>
         </Routes>
 
         <Footer />
