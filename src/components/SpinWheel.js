@@ -11,10 +11,10 @@ const SpinWheel = () => {
     }),
     total = 0,
     rewards = [
+      { name: "secret", info: "secret space ball from planet AndromedaX75" },
       { name: "books", info: "book" },
       { name: "astronaut", info: "ticket for astro" },
       { name: "trees", info: "ticket for build material" },
-      { name: "secret", info: "secret item" },
       { name: "beaver", info: "ticket for beaver item" },
     ];
 
@@ -114,7 +114,7 @@ const SpinWheel = () => {
             />
           </div>
           <div className="wheel__prize_text">
-            <p>You won a {reward.info}</p>
+            <p>You won a {reward.info}!</p>
             <Button variant="contained" onClick={() => setShow(false)}>
               Claim Reward
             </Button>
