@@ -103,6 +103,7 @@ const Session = ({ show, setShow, signMessage }) => {
 
         <pointLight position={[-10, -10, -10]} />
       </Canvas>
+      
     </div>
   );
 };

@@ -11,7 +11,7 @@ const SpinWheel = () => {
     let total = random + number;
     wheel.current.style.transform = `rotate(${total}deg)`; //rotate the wheel
     button.current.style.pointerEvents = "none"; //disable the button
-    wheel.current.style.transition = "all 4s ease-out"; //add transition
+    wheel.current.style.transition = "all 5s ease-out"; //add transition
     setTimeout(() => {
       button.current.style.pointerEvents = "auto"; //enable the button
       wheel.current.style.transition = "none"; //remove transition
