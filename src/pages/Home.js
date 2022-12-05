@@ -29,7 +29,10 @@ export default function Home({ show, setShow }) {
         />
         <pointLight position={[-10, -10, -10]} />
       </Canvas>
-      <SpinWheel />
+
+      <button className="spinning-wheel">
+        <SpinWheel />
+      </button>
     </>
   );
 }

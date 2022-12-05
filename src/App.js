@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 
 // Custom Components
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+// import Footer from "./components/layout/Footer";
 
 // CSS
 import "./App.css";
@@ -81,10 +81,6 @@ function App() {
             }
           ></Route>
         </Routes>
-
-        <button className="spinning-wheel">
-          <SpinWheel />
-        </button>
 
         {/* <Footer /> */}
       </BrowserRouter>
