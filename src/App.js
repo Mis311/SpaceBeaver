@@ -6,8 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Session from "./pages/Session";
 import Dashboard from "./pages/Dashboard";
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import SpinWheel from "./components/SpinWheel";
+// import Footer from "./components/layout/Footer";
 
+import { Canvas } from "@react-three/fiber";
+import Sphere from "./components/Sphere";
+import ActiveUser from "./components/ActiveUser";
+import Calendar from "./components/Calendar";
 // CSS
 import "./App.css";
 import "./Editor.css";
@@ -27,7 +32,8 @@ import Profile from "./pages/Profile";
 function App() {
   // States
   const [connectedAccount] = useGlobalState("connectedAccount"),
-    [userState, setUserState] = useState(true);
+    [userState, setUserState] = useState(true),
+    [show, setShow] = useState(false);
 
   // Readers
   useEffect(() => {
@@ -41,6 +47,14 @@ function App() {
 
   return (
     <>
+      <div id="canvas-container">
+        {show ? <ActiveUser /> : null}
+
+        <button onClick={() => setShow(!show)} className="star-button">
+          ★
+        </button>
+        {show ? <Calendar /> : null}
+      </div>
       <BrowserRouter>
         <Header
           disconnectWallet={disconnectWallet}
@@ -58,8 +72,18 @@ function App() {
             element={<Profile userState={userState} />}
           ></Route>
         </Routes>
-
-        <Footer />
+        <Canvas style={{ height: "80vh" }}>
+          <Sphere />
+          <ambientLight
+            intensity={1}
+            position={[10, 10, 10]}
+            angle={0.15}
+            penumbra={1}
+          />
+          <pointLight position={[-10, -10, -10]} />
+        </Canvas>
+        <SpinWheel />
+        {/* <Footer /> */}
       </BrowserRouter>
     </>
   );
