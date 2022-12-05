@@ -13,6 +13,7 @@ import AssistantPhotoIcon from "@mui/icons-material/AssistantPhoto";
 
 // Custom
 import "./dashboard.css";
+import { FastForward } from "@mui/icons-material";
 
 const userMessage = [
   {
@@ -153,7 +154,18 @@ const Leftboard = () => {
 };
 
 // style = { margin: "1rem" };
-
+const beaverMessage = () => {
+  if (beaverMessage) {
+    alert("Hey friend, I took care of your manglobe garden");
+  }
+};
+const friendMessage = () => {
+  if (beaverMessage) {
+    alert(
+      "Licky: Hey dude, I am going to walk to blockbuster cave. Meet me halfway"
+    );
+  }
+};
 const Middleboard = () => {
   return (
     <>
@@ -198,6 +210,7 @@ const Middleboard = () => {
               color: "red",
               cursor: "pointer",
             }}
+            onClick={() => friendMessage()}
           />
         </div>
 
@@ -227,6 +240,7 @@ const Middleboard = () => {
                 src=".././pics/beaver-john.png"
                 alt="beaver-john"
                 width="100vw"
+                onClick={() => beaverMessage()}
               />
             </li>
           </ul>
