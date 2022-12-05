@@ -200,7 +200,7 @@ const Middleboard = () => {
         </div>
 
         {/* Statistics */}
-        <div>
+        <div className="middleboard-container">
           <ul className="middleboard-container__statistics">
             <li className="middleboard-container__statistics_item">
               <h4>Your Skills</h4>
@@ -215,7 +215,7 @@ const Middleboard = () => {
             </li>
             <li className="middleboard-container__inventry">
             <h4>Inventory</h4>
-              <img src=".././pics/beaver-john.png" alt="beaver-john" width="100vw" />
+              <img className="beaver-john" src=".././pics/beaver-john.png" alt="beaver-john" width="100vw" />
             </li>
             
           </ul>

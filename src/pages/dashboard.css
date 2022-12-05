@@ -115,9 +115,13 @@ button {
 }
 .middleboard-container__statistics > li{
   list-style: none;
-
   
 }
+.middleboard-container > li > img {
+pointer:cursor;
+hover {
+  background: #fff;
+}}
 
 .middleboard-container__statistics_item > p{
   margin: 0;
@@ -131,6 +135,13 @@ flex-direction: row;
 position:relative;
 left: 30px;
 bottom: 50px;
+}
+
+.astro, .beaver-john{
+  pointer:cursor;
+  hover {
+    background: #fff;
+  }
 }
 
 /* .dashboard-header {
