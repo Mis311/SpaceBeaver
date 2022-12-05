@@ -19,7 +19,7 @@ export default function Home({ show, setShow }) {
         {show ? <Calendar /> : null}
       </div>
 
-      <Canvas style={{ height: "80vh" }}>
+      {/* <Canvas style={{ height: "80vh" }}>
         <Sphere />
         <ambientLight
           intensity={1}
@@ -28,12 +28,11 @@ export default function Home({ show, setShow }) {
           penumbra={1}
         />
         <pointLight position={[-10, -10, -10]} />
-      </Canvas>
+      </Canvas> */}
 
-      <button className="spinning-wheel">
+      <div className="spinning-wheel">
         <SpinWheel />
-      </button>
-      <img className="rocket" src=".././pics/rocket.png" alt="rocket"></img>
+      </div>
     </>
   );
 }
