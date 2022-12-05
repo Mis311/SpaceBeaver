@@ -1,9 +1,27 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 // import { smootherstep } from "three/src/math/MathUtils";
 
 const SpinWheel = () => {
   let wheel = useRef("");
   let button = useRef("");
+  //**usestate framework*/
+   const [show, setShow] = useState({ 
+    show: false,
+    setShow: false,
+  });
+
+function changeShow(){
+    setShow(!show);
+}
+
+if (changeShow){
+    return (
+        <div>
+            <h1>{Prize(total)}</h1>
+        </div>
+    )
+}
+
 
   const spin = () => {
     let number = Math.ceil(Math.random() * 10000);
@@ -19,9 +37,8 @@ const SpinWheel = () => {
       wheel.current.style.transform = `rotate(${deg}deg)`; //rotate the wheel
     }, 10000);
 
-    <div className="test" onTransitionEnd={() => Prize()}><h1>test + {Prize()}</h1>
 
-  </div>
+
   };
 
   function Prize(deg) {
@@ -44,7 +61,7 @@ const SpinWheel = () => {
       <button className="spin-button" ref={button} onClick={spin}>
         Spin the wheel
       </button>
-
+      
       <img src="../pics/wheel.png" alt="wheel" ref={wheel}></img>
    
     </>
