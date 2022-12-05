@@ -9,6 +9,7 @@ import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import Avatar from "@mui/material/Avatar";
+import AssistantPhotoIcon from "@mui/icons-material/AssistantPhoto";
 
 // Custom
 import "./dashboard.css";
@@ -31,7 +32,6 @@ const userMessage = [
 export default function Dashboard() {
   return (
     <div className="dashboard">
-
       <div className="dashboard__container">
         <Leftboard />
         <Middleboard />
@@ -101,11 +101,17 @@ const Leftboard = () => {
   return (
     <div className="leftboard-container">
       {/* Start Study */}
-      <div className="leftboard-container__start" >
-        <button className="leftboard-container__start_button" style={ {borderRadius: "10px"}}>
+      <div className="leftboard-container__start">
+        <button
+          className="leftboard-container__start_button"
+          style={{ borderRadius: "10px" }}
+        >
           Start Study
         </button>
-        <button className="leftboard-container__start_button" style={ {borderRadius: "10px"}}>
+        <button
+          className="leftboard-container__start_button"
+          style={{ borderRadius: "10px" }}
+        >
           Stream Study
         </button>
       </div>
@@ -152,10 +158,18 @@ const Middleboard = () => {
       <div className="middleboard-container">
         {/* Numbers */}
         <ul className="scores">
-         <li>850<span>session mins</span></li>
-          <li>12<span>projects done</span></li>
-          <li>140<span>community score</span></li>
-          <li>5<span>milestones</span></li>
+          <li>
+            850<span>session mins</span>
+          </li>
+          <li>
+            12<span>projects done</span>
+          </li>
+          <li>
+            140<span>community score</span>
+          </li>
+          <li>
+            5<span>milestones</span>
+          </li>
         </ul>
 
         {/* Image */}
@@ -169,14 +183,37 @@ const Middleboard = () => {
             }}
             chasingElement={
               <ChasingElement>
-                <img src="/pics/land.webp" alt="User Land" width="500vw"/>
+                <img src="/pics/land.webp" alt="User Land" width="500vw" />
               </ChasingElement>
             }
+          />
+          {/* changing the MUI icon 100px to right*/}
+          <AssistantPhotoIcon
+            style={{
+              position: "relative",
+              left: "300px",
+              bottom: "120px",
+              color: "red",
+              cursor: "pointer",
+            }}
           />
         </div>
 
         {/* Statistics */}
-        <div></div>
+        <div>
+          <ul className="middleboard-container__statistics">
+            <li className="middleboard-container__statistics_item"></li>
+              <h4>Your Skills</h4>
+              <p>12</p>
+            <li className="middleboard-container__community">
+              Community / Individual Statistics
+            </li>
+            <li className="middleboard-container__inventry">
+              <img src=""></img>
+            </li>
+            
+          </ul>
+        </div>
       </div>
     </>
   );

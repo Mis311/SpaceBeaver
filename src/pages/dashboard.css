@@ -99,6 +99,21 @@ button {
   list-style: none;
 }
 
+.middleboard-container__statistics {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  margin-bottom: 4px;
+  background: var(--primary-background);
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  left: 10px;
+  
+}
+.middleboard-container__statistics li{
+  list-style: none;
+}
 /* .dashboard-header {
   flex-direction: row;
   width: 100%;
