@@ -229,7 +229,7 @@ p.profile__username {
 .spin-button{
   position: absolute;
   top: 12%;
-  left: 47%;
+  left: 50%;
   transform: translate(-50%, -50%);
   border: solid 2px rgba(255, 255, 255, 0.5);
   background-color: rgba(244, 255, 255, 0.5);
