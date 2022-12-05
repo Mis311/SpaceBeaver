@@ -59,7 +59,12 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<Home show={show} setShow={SetShow} />} />
+          <Route
+            path="/"
+            element={
+              <Home show={show} setShow={SetShow} signMessage={signMessage} />
+            }
+          />
           <Route
             path="/session"
             element={
@@ -81,8 +86,6 @@ function App() {
             }
           ></Route>
         </Routes>
-
-    
 
         {/* <Footer /> */}
       </BrowserRouter>

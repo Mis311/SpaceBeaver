@@ -58,24 +58,24 @@ export default function Dashboard() {
 //   cursor: "pointer",
 // };
 
-const styles = {
-  mouseContainer: {
-    backgroundColor: "#d3eeca",
-    width: "100%",
-    height: "70vh",
-    flex: 1,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  // /pics/land.webp"
+// const styles = {
+//   mouseContainer: {
+//     backgroundColor: "#d3eeca",
+//     width: "100%",
+//     height: "70vh",
+//     flex: 1,
+//     display: "flex",
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+//   // /pics/land.webp"
 
-  chasingElement: {
-    backgroundColor: "#7771c7",
-    width: 400,
-    height: 200,
-  },
-};
+//   chasingElement: {
+//     backgroundColor: "#7771c7",
+//     width: 400,
+//     height: 200,
+//   },
+// };
 
 const Leftboard = () => {
   function UserMessage(props) {

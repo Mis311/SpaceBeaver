@@ -135,7 +135,7 @@ button {
 
 .astro:hover,
 .beaver-john:hover {
-  pointer: cursor;
+  cursor: pointer;
 }
 
 /* Right Calender */

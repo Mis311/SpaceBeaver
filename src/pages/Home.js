@@ -1,13 +1,13 @@
 // Components
-import { Canvas } from "@react-three/fiber";
+// import { Canvas } from "@react-three/fiber";
 
 // Custom Components
 import SpinWheel from "../components/SpinWheel";
-import Sphere from "../components/Sphere";
+// import Sphere from "../components/Sphere";
 import ActiveUser from "../components/ActiveUser";
 import Calendar from "../components/Calendar";
 
-export default function Home({ show, setShow }) {
+export default function Home({ show, setShow, signMessage }) {
   return (
     <>
       <div id="canvas-container">
@@ -31,7 +31,7 @@ export default function Home({ show, setShow }) {
       </Canvas> */}
 
       <div className="spinning-wheel">
-        <SpinWheel />
+        <SpinWheel signMessage={signMessage} />
       </div>
     </>
   );

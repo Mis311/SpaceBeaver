@@ -287,6 +287,7 @@ p.profile__username {
   position: relative;
   bottom: 30px;
 }
-. .wheel__prize_text {
+.wheel__prize_text {
   text-align: center;
+  flex-direction: column;
 }

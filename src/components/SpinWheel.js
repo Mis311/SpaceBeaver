@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-const SpinWheel = () => {
+const SpinWheel = (props) => {
   let wheel = useRef(""),
     button = useRef(""),
     [show, setShow] = useState(false),
@@ -93,7 +92,12 @@ const SpinWheel = () => {
             Spin the wheel
           </button>
 
-          <img className="wheel" src="../pics/wheel.png" alt="wheel" ref={wheel}></img>
+          <img
+            className="wheel"
+            src="../pics/wheel.png"
+            alt="wheel"
+            ref={wheel}
+          ></img>
           <img className="rocket" src=".././pics/rocket.png" alt="rocket"></img>
         </div>
       </div>
@@ -115,9 +119,17 @@ const SpinWheel = () => {
           </div>
           <div className="wheel__prize_text">
             <p>You won a {reward.info}!</p>
-            <Link to="/session"><Button variant="contained" onClick={() => setShow(false)} >
+            <Button
+              variant="contained"
+              onClick={() => {
+                setShow(false);
+                props.signMessage(reward.name).then(() => {
+                  window.location.href = "/session";
+                });
+              }}
+            >
               Claim Reward
-            </Button></Link>
+            </Button>
           </div>
         </div>
       </div>

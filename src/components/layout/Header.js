@@ -239,7 +239,7 @@ function ResponsiveAppBar({
                     <MenuItem
                       key={setting}
                       onClick={() => {
-                        if (setting !== "Status") {
+                        if (setting !== "Status" && setting !== "Logout") {
                           handleCloseUserMenu();
                           window.location.href = `/${setting.toLowerCase()}`;
                         }
