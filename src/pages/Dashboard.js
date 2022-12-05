@@ -31,9 +31,6 @@ const userMessage = [
 export default function Dashboard() {
   return (
     <div className="dashboard">
-      <div className="dashboard-header">
-        <div className="logo">Dashboard</div>
-      </div>
 
       <div className="dashboard__container">
         <Leftboard />
@@ -104,9 +101,12 @@ const Leftboard = () => {
   return (
     <div className="leftboard-container">
       {/* Start Study */}
-      <div className="leftboard-container__start">
-        <button className="leftboard-container__start_button">
+      <div className="leftboard-container__start" >
+        <button className="leftboard-container__start_button" style={ {borderRadius: "10px"}}>
           Start Study
+        </button>
+        <button className="leftboard-container__start_button" style={ {borderRadius: "10px"}}>
+          Stream Study
         </button>
       </div>
       {/* Conference Room */}
