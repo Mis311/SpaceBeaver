@@ -75,6 +75,28 @@ button {
   margin-left: 1rem;
 }
 
+.scores span{
+  font-size: 10px;
+  font-weight: 100;
+}
+.scores {
+  font-family: system-ui;
+  text-shadow: 2px 2px 4px #000000;
+  color: #fff;
+  justify-content: space-inbetween;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  
+} 
+.scores li{
+  margin: 0 10px;
+  padding: 0 10px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  list-style: none;
+}
+
 /* .dashboard-header {
   flex-direction: row;
   width: 100%;
@@ -130,12 +152,6 @@ button {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
   top: 20px;
-}
-.scores {
-  text-shadow: 2px 2px 4px #000000;
-  margin: 0px 40px 20px -20px;
-  word-spacing: 30px;
-  letter-spacing: 2px;
 }
 
 .planet-container {

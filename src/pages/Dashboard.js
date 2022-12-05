@@ -73,7 +73,7 @@ const styles = {
   chasingElement: {
     backgroundColor: "#7771c7",
     width: 400,
-    height: 300,
+    height: 200,
   },
 };
 
@@ -149,28 +149,27 @@ const Leftboard = () => {
 const Middleboard = () => {
   return (
     <>
-      MIDDLE BOARD
       <div className="middleboard-container">
         {/* Numbers */}
-        <div>
-          <div>850</div>
-          <div>12</div>
-          <div>140</div>
-          <div>5</div>
-        </div>
+        <ul className="scores">
+         <li>850<span>session mins</span></li>
+          <li>12<span>projects done</span></li>
+          <li>140<span>community score</span></li>
+          <li>5<span>milestones</span></li>
+        </ul>
 
         {/* Image */}
         <div>
           <MouseContainer
             options={{
               effectType: "perspective", // or 'movement'
-              max: 30,
+              max: 28,
               perspective: 1000,
-              scale: 1.07,
+              scale: 1.05,
             }}
             chasingElement={
               <ChasingElement>
-                <img src="/pics/land.webp" alt="User Land" />
+                <img src="/pics/land.webp" alt="User Land" width="500vw"/>
               </ChasingElement>
             }
           />
