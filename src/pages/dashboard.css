@@ -83,7 +83,7 @@ button {
 }
 .scores {
   font-family: system-ui;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px gold;
   color: #fff;
   justify-content: space-inbetween;
   font-size: 30px;
@@ -109,10 +109,17 @@ button {
   border-radius: 10px;
   position: relative;
   left: 10px;
+  justify-content: space-between;
   
 }
-.middleboard-container__statistics li{
+.middleboard-container__statistics > li{
   list-style: none;
+}
+.middleboard-container__statistics_item > p{
+  margin: 0;
+  font-size: 10px;
+  font-weight: 100;
+  flex-direction: column;
 }
 /* .dashboard-header {
   flex-direction: row;

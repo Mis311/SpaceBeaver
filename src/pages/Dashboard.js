@@ -202,13 +202,17 @@ const Middleboard = () => {
         {/* Statistics */}
         <div>
           <ul className="middleboard-container__statistics">
-            <li className="middleboard-container__statistics_item"></li>
+            <li className="middleboard-container__statistics_item">
               <h4>Your Skills</h4>
-              <p>12</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+            </li>
             <li className="middleboard-container__community">
-              Community / Individual Statistics
+              <h4>Community / Individual Statistics</h4>
             </li>
             <li className="middleboard-container__inventry">
+            <h4>Inventory</h4>
               <img src=""></img>
             </li>
             
