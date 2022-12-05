@@ -126,7 +126,9 @@ const Leftboard = () => {
         {/* Icon */}
         <LockOutlinedIcon />
       </div>
+
       {/* Messages */}
+      <p>Messages</p>
       <div className="leftboard-container__messages">
         {/* User Message */}
         {userMessage.map((user, index) => (
@@ -203,15 +205,14 @@ const Middleboard = () => {
         <div>
           <ul className="middleboard-container__statistics">
             <li className="middleboard-container__statistics_item"></li>
-              <h4>Your Skills</h4>
-              <p>12</p>
+            <h4>Your Skills</h4>
+            <p>12</p>
             <li className="middleboard-container__community">
               Community / Individual Statistics
             </li>
             <li className="middleboard-container__inventry">
               <img src=""></img>
             </li>
-            
           </ul>
         </div>
       </div>
@@ -222,11 +223,39 @@ const Middleboard = () => {
 const Rightboard = () => {
   return (
     <div className="rightboard-container">
-      RIGHT BOARD
       {/* Calender */}
-      <div></div>
+      <div className="rightboard__calender">
+        {/* Time */}
+        <div className="rightboard__calender_time">
+          <div>
+            <p>
+              {new Date().toLocaleDateString("en-US", {
+                weekday: "short",
+              })}
+            </p>
+            <p>{new Date().getDate()}</p>
+          </div>
+          <div class="rightboard__calender_time_span">
+            <span>25</span>
+            <span>50</span>
+          </div>
+        </div>
+
+        {/* Event */}
+        <div className="rightboard__calender_event">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       {/* Next Course */}
-      <div></div>
+      <div className="rightboard__nextup">
+        <div className="rightboard__nextup_text">Next Up</div>
+        <div className="rightboard__nextup_item">
+          <span>C#</span>
+        </div>
+      </div>
     </div>
   );
 };
