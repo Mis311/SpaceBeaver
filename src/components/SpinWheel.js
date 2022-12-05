@@ -1,11 +1,10 @@
 import { useRef } from "react";
-import { smootherstep } from "three/src/math/MathUtils";
+// import { smootherstep } from "three/src/math/MathUtils";
 
 const SpinWheel = () => {
   let wheel = useRef("");
   let button = useRef("");
 
-  //make it more smooth spinning
   const spin = () => {
     let number = Math.ceil(Math.random() * 10000);
     let random = Math.floor(Math.random() * 360);
@@ -22,14 +21,10 @@ const SpinWheel = () => {
   };
   return (
     <>
-     
       <button className="spin-button" ref={button} onClick={spin}>
         Spin the wheel
       </button>
-      <img
-          src=".././pics/wheel.png"
-          alt="wheel" ref={wheel}>
-      </img>
+      <img src="../pics/wheel.png" alt="wheel" ref={wheel}></img>
     </>
   );
 };
