@@ -13,6 +13,7 @@ import AssistantPhotoIcon from "@mui/icons-material/AssistantPhoto";
 
 // Custom
 import "./dashboard.css";
+import { FastForward } from "@mui/icons-material";
 
 const userMessage = [
   {
@@ -151,7 +152,18 @@ const Leftboard = () => {
 };
 
 // style = { margin: "1rem" };
-
+const beaverMessage = () => {
+  
+  if (beaverMessage) {
+    alert("Hey friend, I took care of your manglobe garden");
+  }
+};
+const friendMessage = () => {
+  
+  if (beaverMessage) {
+    alert("Licky: Hey dude, I am going to walk to blockbuster cave. Meet me halfway");
+  }
+};
 const Middleboard = () => {
   return (
     <>
@@ -195,7 +207,10 @@ const Middleboard = () => {
               bottom: "120px",
               color: "red",
               cursor: "pointer",
+            
+
             }}
+            onClick = { () => friendMessage() }
           />
         </div>
 
@@ -204,20 +219,30 @@ const Middleboard = () => {
           <ul className="middleboard-container__statistics">
             <li className="middleboard-container__statistics_item">
               <h4>Your Skills</h4>
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>JavaScript</p>
-              <img className="astro" src=".././pics/astronaut.png" alt="astro" width="100vw" />
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JavaScript</p>
+              <img
+                className="astro"
+                src=".././pics/astronaut.png"
+                alt="astro"
+                width="100vw"
+              />
             </li>
             <li className="middleboard-container__community">
               <h4>Community / Individual Statistics</h4>
               <img src=".././pics/stats.png" alt="stats" width="200vw" />
             </li>
             <li className="middleboard-container__inventry">
-            <h4>Inventory</h4>
-              <img className="beaver-john" src=".././pics/beaver-john.png" alt="beaver-john" width="100vw" />
+              <h4>Inventory</h4>
+              <img
+                className="beaver-john"
+                src=".././pics/beaver-john.png"
+                alt="beaver-john"
+                width="100vw"
+                onClick = { () => beaverMessage() }
+              />
             </li>
-            
           </ul>
         </div>
       </div>
