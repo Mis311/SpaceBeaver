@@ -211,14 +211,9 @@ function BasicTabs() {
             disablePortal
             id="combo-box-demo"
             options={languages}
+            defaultValue={languages[0]}
             sx={{ width: "50%" }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Language"
-                defaultValue={languages[0]}
-              />
-            )}
+            renderInput={(params) => <TextField {...params} label="Language" />}
           />
         </Box>
 
@@ -232,6 +227,8 @@ function BasicTabs() {
       <TabPanel value={value} index={1}>
         Sessions
       </TabPanel>
+
+      {/* Section 3 */}
       <TabPanel value={value} index={2}>
         Notifications
       </TabPanel>

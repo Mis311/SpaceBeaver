@@ -2,17 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Custom Components
+// Pages
+import Profile from "./pages/Profile";
+import Home from "./pages/Home";
 import Session from "./pages/Session";
 import Dashboard from "./pages/Dashboard";
+
+// Custom Components
 import Header from "./components/layout/Header";
-import SpinWheel from "./components/SpinWheel";
 // import Footer from "./components/layout/Footer";
 
-import { Canvas } from "@react-three/fiber";
-import Sphere from "./components/Sphere";
-import ActiveUser from "./components/ActiveUser";
-import Calendar from "./components/Calendar";
 // CSS
 import "./App.css";
 import "./Editor.css";
@@ -22,12 +21,12 @@ import {
   isWallectConnected,
   // checkIfTransactionExist,
   // getAllTransactions,
-  // signMessage,
+  // getTransactions,
+  signMessage,
   connectWallet,
   disconnectWallet,
 } from "./shared/transaction";
 import { useGlobalState } from "./store";
-import Profile from "./pages/Profile";
 
 function App() {
   // States
@@ -44,18 +43,12 @@ function App() {
   function UserState(bool) {
     setUserState(bool);
   }
+  function SetShow() {
+    setShow(!show);
+  }
 
   return (
     <>
-      <div id="canvas-container">
-        
-        {show ? <ActiveUser /> : null}
-
-        <button onClick={() => setShow(!show)} className="star-button">
-          ★
-        </button>
-        {show ? <Calendar /> : null}
-      </div>
       <BrowserRouter>
         <Header
           disconnectWallet={disconnectWallet}
@@ -66,16 +59,33 @@ function App() {
         />
 
         <Routes>
-          <Route path="/session" element={<Session />}></Route>
+          <Route path="/" element={<Home show={show} setShow={SetShow} />} />
+          <Route
+            path="/session"
+            element={
+              <Session
+                show={show}
+                setShow={SetShow}
+                signMessage={signMessage}
+              />
+            }
+          ></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route
             path="/profile"
-            element={<Profile userState={userState} />}
+            element={
+              <Profile
+                userState={userState}
+                connectedAccount={connectedAccount}
+              />
+            }
           ></Route>
         </Routes>
 
-          <button className="spinning-wheel"><SpinWheel /></button>
-            <img className="rocket" src="../pics/rocket.png" alt="rocket"></img>
+        <button className="spinning-wheel">
+          <SpinWheel />
+        </button>
+
         {/* <Footer /> */}
       </BrowserRouter>
     </>

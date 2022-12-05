@@ -11,11 +11,10 @@ import Sphere from "../components/Sphere";
 // CSS
 import "./session.css";
 
-const Session = () => {
+const Session = ({ show, setShow, signMessage }) => {
   // State
   const [time, setTime] = useState(false),
-    [start, setStart] = useState(false),
-    [show, setShow] = useState(false);
+    [start, setStart] = useState(false);
 
   // Updates the timer
   useEffect(() => {
@@ -36,8 +35,11 @@ const Session = () => {
   // Handler on sphere button click
   const handleSphereClick = () => {
     if (!time) {
-      setTime(3600);
-      setStart(true);
+      signMessage("Start Timer?").then(() => {
+        setTime(3600);
+        setStart(true);
+        console.log("Timer Started");
+      });
     }
     // pauses the timer on the same number
     if (time && start) setStart(false);

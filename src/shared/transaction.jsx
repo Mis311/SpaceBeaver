@@ -91,6 +91,19 @@ const signMessage = async (message) => {
   }
 };
 
+const getTransactions = async () => {
+  try {
+    if (!ethereum) console.log("Please install Metamask");
+    const transactionContract = getEtheriumContract();
+    const transactions = await transactionContract.getTransactions();
+    setGlobalState("transactions", transactions);
+    console.log(transactions);
+  } catch (error) {
+    console.log(error);
+    throw new Error("No ethereum object.");
+  }
+};
+
 const getTransactionCount = async () => {
   try {
     if (!ethereum) console.log("Please install Metamask");
@@ -125,4 +138,5 @@ export {
   signMessage,
   disconnectWallet,
   getTransactionCount,
+  getTransactions,
 };
