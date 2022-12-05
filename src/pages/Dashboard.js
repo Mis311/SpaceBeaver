@@ -207,10 +207,11 @@ const Middleboard = () => {
                 <p>HTML</p>
                 <p>CSS</p>
                 <p>JavaScript</p>
+              <img className="astro" src=".././pics/astronaut.png" alt="astro" width="100vw" />
             </li>
             <li className="middleboard-container__community">
               <h4>Community / Individual Statistics</h4>
-              <img src=".././pics/astronaut.png" alt="beaver-john" width="100vw" />
+              <img src=".././pics/stats.png" alt="stats" width="200vw" />
             </li>
             <li className="middleboard-container__inventry">
             <h4>Inventory</h4>

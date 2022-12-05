@@ -89,7 +89,6 @@ button {
   font-size: 30px;
   display: flex;
   flex-direction: row;
-  
 } 
 .scores li{
   margin: 0 10px;
@@ -104,23 +103,36 @@ button {
   flex-direction: row;
   align-items: left;
   margin-bottom: 4px;
-  background: var(--primary-background);
-  padding: 1rem;
+  font-family: system-ui;
+  text-shadow: 1px 1px 4px silver;
   border-radius: 10px;
   position: relative;
   left: 10px;
+  bottom: 60px;
   justify-content: space-between;
+  padding-right:1rem;
   
 }
 .middleboard-container__statistics > li{
   list-style: none;
+
+  
 }
+
 .middleboard-container__statistics_item > p{
   margin: 0;
   font-size: 10px;
   font-weight: 100;
   flex-direction: column;
 }
+.middleboard-container__statistics_item > .astro{
+display: flex;
+flex-direction: row;
+position:relative;
+left: 30px;
+bottom: 50px;
+}
+
 /* .dashboard-header {
   flex-direction: row;
   width: 100%;
