@@ -64,7 +64,7 @@ a:hover {
   transition: all 0.2s;
   padding: 10px 20px;
   font-size: 1.5rem;
-  z-index: 999;
+  /* z-index: 999; */
 }
 
 button {
@@ -230,24 +230,44 @@ p.profile__username {
 
 .rocket {
   height: 150px;
-  position: absolute;
-  top: 74%;
-  left: 44%;
   width: fit-content;
-  /* box-shadow: ; */
+  transform: translateY(-7rem);
+}
+.wheel__prize,
+.wheel__prize_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wheel__prize_container {
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background: #000000c9;
+  transition: 1s ease all;
 }
 
 .wheel__prize {
-  background: black;
-  width: 60vw;
-  height: 40vw;
-  position: fixed;
-  z-index: 9999999;
+  width: 30vw;
+  height: 20vw;
   color: #fff;
+  background: black;
+  flex-direction: column;
 }
 
+.wheel__start_container,
 .wheel__start {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.wheel__start {
+  transform: translateY(3rem);
+}
+.wheel__prize_text {
+  text-align: center;
 }
