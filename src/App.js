@@ -82,9 +82,7 @@ function App() {
           ></Route>
         </Routes>
 
-        <button className="spinning-wheel">
-          <SpinWheel />
-        </button>
+    
 
         {/* <Footer /> */}
       </BrowserRouter>
