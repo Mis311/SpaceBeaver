@@ -71,23 +71,6 @@ const Session = ({ show, setShow, signMessage }) => {
         userName={"ley"}
         userSecret={"1234"}
       />
-
-      <div className={"chat-count "}>
-        <p>Session Time</p>
-        <div className="chat-count-text">
-          {time ? ConvertTime(time) : "01:00:00"}
-        </div>
-      </div>
-
-      <div id="canvas-container">
-        {show ? <ActiveUser /> : null}
-
-        {/*  */}
-        <button onClick={() => setShow(!show)} className="star-button">
-          ★ Active Users
-        </button>
-        {show ? <Calendar /> : null}
-      </div>
       <Canvas
         style={{
           height: "100vh",
@@ -104,6 +87,23 @@ const Session = ({ show, setShow, signMessage }) => {
         <pointLight position={[-10, -10, -10]} />
       </Canvas>
       
+      <div className={"chat-count "}>
+        <p>Session Time</p>
+        <div className="chat-count-text">
+          {time ? ConvertTime(time) : "01:00:00"}
+        </div>
+      </div>
+
+      <div id="canvas-container">
+        {show ? <ActiveUser /> : null}
+
+        {/*  */}
+        <button onClick={() => setShow(!show)} className="star-button">
+          ★ Active Users
+        </button>
+        {show ? <Calendar /> : null}
+      </div>
+
     </div>
   );
 };

@@ -137,12 +137,7 @@ left: 30px;
 bottom: 50px;
 }
 
-.astro, .beaver-john{
-  pointer:cursor;
-  hover {
-    background: #fff;
-  }
-}
+.astro:hover, .beaver-john:hover { pointer: cursor }
 
 /* .dashboard-header {
   flex-direction: row;
