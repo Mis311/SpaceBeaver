@@ -17,6 +17,7 @@
     "react-chat-engine": "^1.11.27",
     "react-dom": "^18.2.0",
     "react-hooks-global-state": "^2.0.0",
+    "react-mouse-image-move": "^1.4.2",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
     "three": "^0.147.0",

@@ -142,10 +142,6 @@ button {
   margin: 10px;
 }
 
-.dashboard {
-  margin-left: 200px;
-}
-
 /* .session-page > div:nth-child(4) > div {
   height: 12vh;
 } */
@@ -221,7 +217,7 @@ p.profile__username {
 
 /* ======= Wheel ======= */
 
-.spin-button{
+.spin-button {
   position: absolute;
   top: 6%;
   left: 47%;
@@ -236,7 +232,7 @@ p.profile__username {
   font-family: system-ui;
   weight: 700;
   color: pink;
-  pointer:transparent;
+  pointer: transparent;
 }
 
 .spinning-wheel {
@@ -251,5 +247,4 @@ p.profile__username {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
