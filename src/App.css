@@ -220,3 +220,18 @@ p.profile__username {
 }
 
 /* ======= Wheel ======= */
+.spinning-wheel{
+  position: absolute;
+  top: 49%;
+  left: 50.6%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  width:fit-content;
+  box-shadow: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: -1;
+}

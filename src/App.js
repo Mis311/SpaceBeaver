@@ -82,7 +82,8 @@ function App() {
           />
           <pointLight position={[-10, -10, -10]} />
         </Canvas>
-        <SpinWheel />
+          <div className="spinning-wheel"><SpinWheel /></div>
+        
         {/* <Footer /> */}
       </BrowserRouter>
     </>
