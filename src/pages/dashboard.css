@@ -78,7 +78,7 @@ button {
   padding: 10px 25px;
 }
 
-.leftboard-cointainer {
+.leftboard-cointainer, .middleboard-cointainer, .rightboard-cointainer  {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -86,11 +86,8 @@ button {
   border: 1px solid white;
 }
 .middleboard-cointainer {
-  display: flex;
-  flex-direction: row;
   width: 40%;
-  height: 100%;
-  border: 1px solid white;
+  
 }
 
 .leftboard-cointainer,

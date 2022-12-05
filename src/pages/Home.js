@@ -33,6 +33,7 @@ export default function Home({ show, setShow }) {
       <button className="spinning-wheel">
         <SpinWheel />
       </button>
+      <img className="rocket" src=".././pics/rocket.png" alt="rocket"></img>
     </>
   );
 }
