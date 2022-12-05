@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Session from "./pages/Session";
 import Dashboard from "./pages/Dashboard";
 import Header from "./components/layout/Header";
+import SpinWheel from   "./components/SpinWheel";
 // import Footer from "./components/layout/Footer";
 
 import { Canvas } from "@react-three/fiber";
@@ -54,8 +55,9 @@ function App() {
         <Routes>
           <Route path="/session" element={<Session />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
+          
         </Routes>
-        <Canvas style={{height:"100vh"}}>
+        <Canvas style={{height:"80vh"}}>
           <Sphere />
           <ambientLight
             intensity={1}
@@ -64,8 +66,11 @@ function App() {
             penumbra={1}
           />
           <pointLight position={[-10, -10, -10]} />
+        
         </Canvas>
+        <SpinWheel />
         {/* <Footer /> */}
+        
       </BrowserRouter>
     </>
   );
