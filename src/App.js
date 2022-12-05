@@ -48,6 +48,7 @@ function App() {
   return (
     <>
       <div id="canvas-container">
+        
         {show ? <ActiveUser /> : null}
 
         <button onClick={() => setShow(!show)} className="star-button">
@@ -72,9 +73,9 @@ function App() {
             element={<Profile userState={userState} />}
           ></Route>
         </Routes>
-       
+
           <button className="spinning-wheel"><SpinWheel /></button>
-        
+            <img className="rocket" src="../pics/rocket.png" alt="rocket"></img>
         {/* <Footer /> */}
       </BrowserRouter>
     </>
