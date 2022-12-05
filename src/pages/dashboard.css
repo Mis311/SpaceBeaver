@@ -1,6 +1,5 @@
 :root {
   --primary-background: #071935;
-
 }
 
 /* Main Dashboard */
@@ -13,15 +12,13 @@
   display: flex;
   flex-direction: row;
   border-radius: 10px;
-  height:screen;
-  
+  height: screen;
 }
 
 /* Main Dashboard */
 .dashboard__container {
-
-  height: screen;
-  
+  margin: 2rem;
+  justify-content: space-between;
 }
 
 button {
@@ -43,14 +40,14 @@ button {
   align-items: center;
   margin-top: 10px;
   background: var(--primary-background);
-  padding:0.4rem;
+  padding: 0.4rem;
   border-radius: 10px;
 }
 
 .leftboard-container__messages {
   background: var(--primary-background);
   margin-top: 10px;
-  padding: 1rem 1rem;
+  padding: 2rem 1rem;
   border-radius: 10px;
 }
 .leftboard__users_user {
@@ -77,7 +74,7 @@ button {
   margin-left: 1rem;
 }
 
-.scores span{
+.scores span {
   font-size: 10px;
   font-weight: 100;
 }
@@ -89,8 +86,8 @@ button {
   font-size: 30px;
   display: flex;
   flex-direction: row;
-} 
-.scores li{
+}
+.scores li {
   margin: 0 10px;
   padding: 0 10px;
   border: 1px solid #fff;
@@ -110,34 +107,94 @@ button {
   left: 10px;
   bottom: 60px;
   justify-content: space-between;
-  padding-right:1rem;
-  
+  padding-right: 1rem;
 }
-.middleboard-container__statistics > li{
+.middleboard-container__statistics li {
   list-style: none;
-  
 }
 .middleboard-container > li > img {
-pointer:cursor;
-hover {
+  cursor: pointer;
+}
+.middleboard-container > li > img:hover {
   background: #fff;
-}}
+}
 
-.middleboard-container__statistics_item > p{
+.middleboard-container__statistics_item > p {
   margin: 0;
   font-size: 10px;
   font-weight: 100;
   flex-direction: column;
 }
-.middleboard-container__statistics_item > .astro{
-display: flex;
-flex-direction: row;
-position:relative;
-left: 30px;
-bottom: 50px;
+.middleboard-container__statistics_item > .astro {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 30px;
+  bottom: 50px;
 }
 
-.astro:hover, .beaver-john:hover { pointer: cursor }
+.astro:hover,
+.beaver-john:hover {
+  pointer: cursor;
+}
+
+/* Right Calender */
+.rightboard__calender {
+  padding-top: 1px;
+  background-color: #1d1d1e;
+}
+.rightboard__calender_time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 2rem 0;
+}
+
+.rightboard__calender_time > div {
+  border-radius: 5px;
+}
+.rightboard__calender_time > div > p {
+  margin: 0;
+}
+.rightboard__calender_time > div > p:first-child {
+  font-size: 0.7rem;
+}
+.rightboard__calender_time > div > p:last-child {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.rightboard__calender_time_span {
+  display: flex;
+  background: #424242;
+  justify-content: center;
+}
+.rightboard__calender_time_span > span {
+  font-weight: 600;
+  margin: 0.5rem 1rem;
+}
+
+.rightboard__calender_event > div {
+  border: 2px solid #3a58c6;
+  height: 5rem;
+  width: 12rem;
+  margin: 0.5rem 1rem;
+}
+
+.rightboard__nextup {
+  display: flex;
+  background: var(--primary-background);
+  padding: 1rem;
+  border-radius: 5px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.rightboard__nextup span {
+  font-size: 4rem;
+  font-size: 4rem;
+  opacity: 0.56;
+  color: #81ff81;
+}
 
 /* .dashboard-header {
   flex-direction: row;

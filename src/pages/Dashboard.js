@@ -127,7 +127,9 @@ const Leftboard = () => {
         {/* Icon */}
         <LockOutlinedIcon />
       </div>
+
       {/* Messages */}
+      <p>Messages</p>
       <div className="leftboard-container__messages">
         {/* User Message */}
         {userMessage.map((user, index) => (
@@ -153,15 +155,15 @@ const Leftboard = () => {
 
 // style = { margin: "1rem" };
 const beaverMessage = () => {
-  
   if (beaverMessage) {
     alert("Hey friend, I took care of your manglobe garden");
   }
 };
 const friendMessage = () => {
-  
   if (beaverMessage) {
-    alert("Licky: Hey dude, I am going to walk to blockbuster cave. Meet me halfway");
+    alert(
+      "Licky: Hey dude, I am going to walk to blockbuster cave. Meet me halfway"
+    );
   }
 };
 const Middleboard = () => {
@@ -207,10 +209,8 @@ const Middleboard = () => {
               bottom: "120px",
               color: "red",
               cursor: "pointer",
-            
-
             }}
-            onClick = { () => friendMessage() }
+            onClick={() => friendMessage()}
           />
         </div>
 
@@ -240,7 +240,7 @@ const Middleboard = () => {
                 src=".././pics/beaver-john.png"
                 alt="beaver-john"
                 width="100vw"
-                onClick = { () => beaverMessage() }
+                onClick={() => beaverMessage()}
               />
             </li>
           </ul>
@@ -253,11 +253,39 @@ const Middleboard = () => {
 const Rightboard = () => {
   return (
     <div className="rightboard-container">
-      RIGHT BOARD
       {/* Calender */}
-      <div></div>
+      <div className="rightboard__calender">
+        {/* Time */}
+        <div className="rightboard__calender_time">
+          <div>
+            <p>
+              {new Date().toLocaleDateString("en-US", {
+                weekday: "short",
+              })}
+            </p>
+            <p>{new Date().getDate()}</p>
+          </div>
+          <div class="rightboard__calender_time_span">
+            <span>25</span>
+            <span>50</span>
+          </div>
+        </div>
+
+        {/* Event */}
+        <div className="rightboard__calender_event">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       {/* Next Course */}
-      <div></div>
+      <div className="rightboard__nextup">
+        <div className="rightboard__nextup_text">Next Up</div>
+        <div className="rightboard__nextup_item">
+          <span>C#</span>
+        </div>
+      </div>
     </div>
   );
 };
