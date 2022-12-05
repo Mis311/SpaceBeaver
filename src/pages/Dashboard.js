@@ -210,10 +210,11 @@ const Middleboard = () => {
             </li>
             <li className="middleboard-container__community">
               <h4>Community / Individual Statistics</h4>
+              <img src=".././pics/astronaut.png" alt="beaver-john" width="100vw" />
             </li>
             <li className="middleboard-container__inventry">
             <h4>Inventory</h4>
-              <img src=""></img>
+              <img src=".././pics/beaver-john.png" alt="beaver-john" width="100vw" />
             </li>
             
           </ul>
