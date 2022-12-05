@@ -11,29 +11,27 @@ const SpinWheel = () => {
     let random = Math.floor(Math.random() * 360);
     let total = random + number;
     wheel.current.style.transform = `rotate(${total}deg)`; //rotate the wheel
+    button.current.style.pointerEvents = "none"; //disable the button
+    wheel.current.style.transition = "all 4s ease-out"; //add transition
+    setTimeout(() => {
+      button.current.style.pointerEvents = "auto"; //enable the button
+      wheel.current.style.transition = "none"; //remove transition
+      let deg = total % 360; //find the degree
+      wheel.current.style.transform = `rotate(${deg}deg)`; //rotate the wheel
+    }, 10000);
   };
   return (
-    <>   
-      <button
-        ref={button}
-        onClick={() => {
-          spin();
-        }}
-      >
+    <>
+     
+      <button className="spin-button" ref={button} onClick={spin}>
         Spin the wheel
       </button>
-      <div className="wheelContainer">
-        <img
+      <img
           src=".././pics/wheel.png"
-          alt="wheel"
-          className="wheel"
-          ref={wheel}
-        ></img>
-      </div>
+          alt="wheel" ref={wheel}>
+      </img>
     </>
   );
 };
 
-
 export default SpinWheel;
-
